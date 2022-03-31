@@ -27,7 +27,7 @@ TEST_CASE("infers the breach according to limits of each cooling Type") {
   
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, (MEDACTIVE_COOLING_LOWER_LIMIT)) == NORMAL);
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, (MEDACTIVE_COOLING_LOWER_LIMIT-1)) == TOO_LOW);
-  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, (MEDACTIVE_COOLING_HIGHER_LIMIT)) == NORMAL);
+  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, (MEDACTIVE_COOLING_HIGHER_LIMIT-1)) == NORMAL);
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, (MEDACTIVE_COOLING_HIGHER_LIMIT+1)) == TOO_HIGH);  
 }
 
@@ -36,6 +36,12 @@ TEST_CASE("Verify sending of allert to controller") {
   sendToController(TOO_LOW); 
   sendToController(TOO_HIGH);
   sendToController(NORMAL);
+}
+
+TEST_CASE("Verify sending of allert by email") {
+  sendToEmail(TOO_LOW); 
+  sendToEmail(TOO_HIGH);
+  sendToEmail(NORMAL);
 }
 
 TEST_CASE("Verify check and allert funtion") {
