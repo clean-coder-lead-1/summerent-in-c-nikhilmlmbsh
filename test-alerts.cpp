@@ -33,9 +33,9 @@ TEST_CASE("infers the breach according to limits of each cooling Type") {
 
 
 TEST_CASE("Verify sending of allert to controller") {
-  REQUIRE(sendToController(TOO_LOW)); 
-  REQUIRE(sendToController(TOO_HIGH));
-  REQUIRE(sendToController(NORMAL));
+  sendToController(TOO_LOW); 
+  sendToController(TOO_HIGH);
+  sendToController(NORMAL);
 }
 
 TEST_CASE("Verify check and allert funtion") {
