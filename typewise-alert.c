@@ -32,7 +32,7 @@ BreachType classifyTemperatureBreach(
   else
   {  
       lowerLimit = MEDACTIVE_COOLING_LOWER_LIMIT;
-      upperLimit = MEDACTIVE_COOLING_LOWER_LIMIT;
+      upperLimit = MEDACTIVE_COOLING_HIGHER_LIMIT;
   }
   
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
