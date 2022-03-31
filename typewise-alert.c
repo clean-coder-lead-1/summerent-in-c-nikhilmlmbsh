@@ -76,7 +76,7 @@ void sendToEmail(BreachType breachType)
       break;
     default	:
       printf("To: %s\n", recepient);
-      printf("Hi, the temperature is normal\n");:
+      printf("Hi, the temperature is normal\n");
       break;
   }
 }
