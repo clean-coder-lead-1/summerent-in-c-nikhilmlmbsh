@@ -15,7 +15,7 @@ TEST_CASE("infers the breach according to limits") {
 
 
 TEST_CASE("infers the breach according to limits of each cooling Type") {
-  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, (PASSIVE_COOLING_LOWER_LIMIT_1)) == NORMAL);
+  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, (PASSIVE_COOLING_LOWER_LIMIT+1)) == NORMAL);
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, (PASSIVE_COOLING_LOWER_LIMIT-1)) == TOO_LOW);
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, (PASSIVE_COOLING_HIGHER_LIMIT-1)) == NORMAL);
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, (PASSIVE_COOLING_HIGHER_LIMIT+1)) == TOO_HIGH);
@@ -33,9 +33,9 @@ TEST_CASE("infers the breach according to limits of each cooling Type") {
 
 
 TEST_CASE("Verify sending of allert to controller") {
-  REQUIRE(sendToController(TOO_LOW); 
-  REQUIRE(sendToController(TOO_HIGH);
-  REQUIRE(sendToController(NORMAL);
+  REQUIRE(sendToController(TOO_LOW)); 
+  REQUIRE(sendToController(TOO_HIGH));
+  REQUIRE(sendToController(NORMAL));
 }
 
 TEST_CASE("Verify check and allert funtion") {
