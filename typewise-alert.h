@@ -30,7 +30,7 @@ typedef struct {
 #define HIACTIVE_COOLING_LOWER_LIMIT 	0
 #define HIACTIVE_COOLING_HIGHER_LIMIT 	45
 #define MEDACTIVE_COOLING_LOWER_LIMIT 	0
-#define MEDACTIVE_COOLING_LOWER_LIMIT 	40
+#define MEDACTIVE_COOLING_HIGHER_LIMIT 	40
 
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
